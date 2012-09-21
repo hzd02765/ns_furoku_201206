@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var CVS = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+
+      CNT.rect(0, 0, 100, 100);
+      CNT.stroke();
+      CNT.clip();
+
+      CNT.beginPath();
+      var SANG = 0;
+      var EANG = 360 * Math.PI / 180;
+      CNT.arc(100, 100, 90, SANG, EANG, false);
+      CNT.stroke();
+      CNT.fillStyle = "rgb(255, 0, 0)";
+      CNT.fill();
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>

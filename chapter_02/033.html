@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var CVS = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+      CNT.beginPath();
+      CNT.moveTo(50, 50);
+      CNT.bezierCurveTo(0, 180, 100, 10, 150, 200);
+      CNT.stroke();
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>

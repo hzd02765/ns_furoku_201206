@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var CVS = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+      CNT.fillStyle = "rgb(255, 0, 0)";
+      CNT.fillRect(0, 0, 180, 180);
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>

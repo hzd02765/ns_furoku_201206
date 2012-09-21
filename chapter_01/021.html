@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ページのタイトル</title>
+  </head>
+  <body>
+    <!--この入力欄はフォームのそとにあります-->
+    <!-- form="～"に注目 -->
+    <input type="text" form="FRM_1" name="TXT_1">
+    <p>ここに通常のテキストなど</p>
+    <!--ここがフォームです-->
+    <form id="FRM_1" method="GET" action="foo.html">
+      <input type="submit" value="送信">
+      
+      <input type="tel">
+      <input type="search">
+      <input type="url">
+      <input type="email">
+      <input type="datetime">
+      <input type="date">
+      <input type="month">
+      <input type="week">
+      <input type="time">
+      <input type="datetime-local">
+      <input type="number">
+      <input type="range">
+      <input type="color">
+
+      <input type="text" name="TXT_1" placeholder="田中太郎">
+    </form>
+  </body>
+</html>
