@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var CVS1 = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+
+      CNT.fillStyle = "rgb(255, 0, 0)";
+      CNT.fillRect(10, 10, 50, 50);
+      CNT.fillStyle = "rgb(0, 0, 255)";
+      CNT.fillRect(60, 10, 50, 50);
+      CNT.fillStyle = "rgb(0, 255, 0)";
+      CNT.fillRect(10, 60, 50, 50);
+      CNT.fillStyle = "rgb(0, 0, 0)";
+      CNT.fillRect(60, 60, 50, 50);
+
+      var CPY = CNT.getImageData(25, 25, 50, 50);
+      var CVS2 = document.getElementById("CVS_2");
+      var CNT2 = CVS2.getContext("2d");
+      CNT2.putImageData(CPY, 10, 10);
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <canvas id="CVS_2" width="200" height="200">
+    </canvas>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>

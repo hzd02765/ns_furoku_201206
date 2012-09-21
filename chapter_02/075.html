@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var CVS1 = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+
+      var IMG = new Image();
+      IMG.src = "../jpg/iWannaBeAdored.jpg";
+      IMG.onload = function(){
+      CNT.drawImage(
+//      IMG, 0, 0
+      IMG, 0, 0, 75, 75, 50, 50, 100, 100
+      );
+      }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <img src="../jpg/iWannaBeAdored.jpg"><br>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>

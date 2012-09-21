@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var CVS = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+
+      CNT.rotate(30 * Math.PI / 180);
+      CNT.rect(100, 10, 120, 80);
+      CNT.stroke();
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>

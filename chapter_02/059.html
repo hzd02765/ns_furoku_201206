@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+      var BGI = new Image();
+      BGI.src = "../png/TV.png";
+
+      var CVS = document.getElementById("CVS");
+      var CNT = CVS.getContext("2d");
+
+      BGI.onload = function(){
+      var BGP = CNT.createPattern(BGI, "repeat");
+      CNT.rect(0, 0, 180, 180);
+      CNT.fillStyle = BGP;
+      CNT.fill();
+      }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="200" height="200">
+    </canvas>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>
