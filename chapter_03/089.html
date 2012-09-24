@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function DRW(){
+
+      if(window.localStorage){
+      alert("Web Storageが使用できます。");
+      }else{
+      alert("Web Storageが使用できません。");
+      }
+      
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="CVS" width="400" height="200">
+    </canvas>
+    <br>
+    <input type="button" id="BTN" onclick="DRW()" value="描画">
+  </body>
+</html>
