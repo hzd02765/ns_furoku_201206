@@ -7,12 +7,10 @@
       var CVS = document.getElementById("CVS");
       var CNT = CVS.getContext("2d");
 
-      var TEXT = "Canvasに文字列を描き出し";
-      CNT.font = "bold 18px 'MS Pゴシック'";
-
-      var TMX = CNT.measureText(TEXT);
-      alert("この文字列は" + TMX.width + "px所有します");
-      CNT.fillText(TEXT, 10, 25);
+      CNT.globalAlpha = 0.5;
+      CNT.fillRect(10, 10, 100, 80);
+      CNT.fillStyle = "rgba(255, 0, 0, 0.5)";
+      CNT.fillRect(30, 30, 100, 80);
       }
     </script>
   </head>
