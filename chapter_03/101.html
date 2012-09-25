@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function WS(){
+      localStorage.setItem("test", document.frm_1.text_1.value);
+      alert("キー名「test」の値は" + localStorage.getItem("test") + "です。");
+      localStorage.clear();
+      alert("現在のデータ数は" + localStorage.length + "です。");
+      }
+    </script>
+  </head>
+  <body>
+    <form name="frm_1">
+      <input type="text" id="text_1">
+      <br>
+      <input type="button" id="button_1" value="データを保存" onClick="WS()">
+    </form>
+  </body>
+</html>

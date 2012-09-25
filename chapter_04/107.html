@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      navigator.geolocation.getCurrentPosition(
+      SccCB, ErrCB, {enableHighAccuracy:false}
+      );
+
+      function SccCB(position){
+      alert("位置情報を取得できました。");
+      }
+
+      function ErrCB(error){
+      alert("位置情報を取得できませんでした。");
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

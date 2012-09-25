@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      window.addEventListener("storage",function(evt){
+      alerts("キー名「" + evt.key + "」の値が変更されました。");
+      }, false);
+
+      function WS(){
+      localStorage.setItem(document.frm_1.text_1.value, document.frm_1.text_2.value);
+      }
+
+      function RI(){
+      localStorage.clear();
+      }
+    </script>
+  </head>
+  <body>
+    入力されたデータを保存します。
+    <form name="frm_1">
+      キー名：<input type="text" id="text_1">
+      &nbsp;
+      値：<input type="text" id="text_2">
+      <br>
+      <input type="button" id="button_1" value="データを保存" onClick="WS()">
+      <input type="button" id="button_2" value="データを消去" onClick="RI()">
+    </form>
+  </body>
+</html>
