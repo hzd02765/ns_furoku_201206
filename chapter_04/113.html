@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+	<script>
+		navigator.geolocation.watchPosition(SccWB, ErrWB);
+		
+		function SccWB(position){
+			// alert("位置情報を取得しました。");
+			var lat = position.coords.latitude;
+			var lon = position.coords.longitude;
+			var acu = position.coords.accuracy;
+			var STR = "緯度は" + lat + "\n";
+			STR = STR + "経度は" + lon + "\n";
+			STR = STR + "誤差はは" + acu + "\n";
+			
+			console.log(STR);
+		}
+		
+		function ErrWB(error){
+			alert("位置情報を取得できませんでした。");
+		}
+		
+	</script>
+</head>
+<body>
+</body>
+</html>

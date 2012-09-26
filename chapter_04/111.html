@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+	<script>
+		var GL;
+		GL = navigator.geolocation.watchPosition(
+			SccWB, ErrWB, {timeout:30000}
+		);
+		
+		function SccWB(position){
+			alert("位置情報を取得しました。");
+		}
+		
+		function ErrWB(error){
+			alert("位置情報を取得できませんでした。");
+		}
+		
+		function StopWB(error){
+			navigator.geolocation.clearWatch(GL);
+			alert("位置情報の監視を停止しました。");
+		}
+	</script>
+</head>
+<body>
+	ボタンを押すと位置情報の監視を停止します。
+	<br>
+	<input type="button" value="位置情報の停止" onClick="StopWB()">
+</body>
+</html>

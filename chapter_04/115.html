@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+	<script>
+		var WP;
+		WP = navigator.geolocation.watchPosition(
+			SccCB, ErrCB, {enableHighAccuracy:true}
+		);
+		
+		function SccCB(position){
+			var alt = position.coords.altitude;
+			var alc = position.coords.altitudeAccuracy;
+			var STR = "高度は" + alt + "メートル\n";
+			STR = STR + "高度誤差は" + alc + "メートルです\n"
+			alert(STR);
+		}
+	
+		function ErrCB(error){
+			alert("位置情報を取得できませんでした。");
+		}
+		
+	</script>
+</head>
+<body>
+</body>
+</html>

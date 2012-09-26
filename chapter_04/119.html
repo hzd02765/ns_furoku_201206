@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+	<script>
+		var WP;
+		WP = navigator.geolocation.watchPosition(
+			SccCB, ErrCB, {enableHighAccuracy:true}
+		);
+		
+		function SccCB(position){
+			var spd = position.coords.speed;
+			var STR = "現在の移動速度は" + spd + " m/secです。\n";
+			alert(STR);
+		}
+	
+		function ErrCB(error){
+			alert("位置情報を取得できませんでした。");
+		}
+		
+	</script>
+</head>
+<body>
+</body>
+</html>
