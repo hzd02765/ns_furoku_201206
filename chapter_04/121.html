@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+	<script>
+		var WP;
+		WP = navigator.geolocation.watchPosition(
+			SccCB, ErrCB, {enableHighAccuracy:true}
+		);
+
+		function SccCB(position){
+			var tms = position.timestamp;
+			dd = new Date();
+			alert(dd.toLocaleString(tms) + "です。");
+		}
+	
+		function ErrCB(error){
+			alert("位置情報を取得できませんでした。");
+		}
+		
+	</script>
+</head>
+<body>
+</body>
+</html>

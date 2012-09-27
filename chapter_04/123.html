@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sample</title>
+	<script>
+		navigator.geolocation.getCurrentPosition(
+			SccCB, ErrCB, {enableHighAccuracy:true}
+		);
+
+		function SccCB(position){
+			alert("位置情報を取得しました。");
+		}
+	
+		function ErrCB(error){
+			var STR = "エラーが発生しました。";
+			STR = STR + "\nエラー内容:" + error.message;
+			STR = STR + "\nエラーコード:" + error.code;
+			alert(STR);
+		}
+		
+	</script>
+</head>
+<body>
+</body>
+</html>
