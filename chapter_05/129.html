@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function init(){
+    var IMG_2 = document.getElementById("img_2");
+    IMG_2.addEventListener("dragover", DRO, true);
+    IMG_2.addEventListener("drop", DRP, true);
+    }
+    
+    function DRO(evt){
+    evt.preventDefault();
+    }
+
+    function DRP(evt){
+    evt.preventDefault();
+    alert("ドロップされました。");
+    }
+  </script>
+</head>
+<body onload="init()">
+  <img id="img_1" src="../jpg/made_of_stone.jpg" draggable="true">
+  &nbsp;
+  <img Id="img_2" src="../jpg/nevermind.jpg" draggable="false">
+</body>
+</html>
