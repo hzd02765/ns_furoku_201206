@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <style>
+    #div_1{
+    width:200px;
+    height:200px;
+    background:#f00;
+    }
+  </style>
+  <script>
+    function init(){
+    DIV_1 = document.getElementById("div_1");
+    DIV_1.addEventListener("dragstart", DRS, true);
+    DIV_1.addEventListener("dragover", DRO, true);
+    DIV_1.addEventListener("drop", DRP, true);
+    }
+    
+    function DRS(evt){
+    evt.dataTransfer.setData("text/plain", document.getElementById("div_1"));
+    }
+
+    function DRO(evt){
+    evt.preventDefault();
+    }
+
+    function DRP(evt){
+    evt.preventDefault();
+    document.getElementById("div_1").innerHTML += "<P>" + evt.dataTransfer.getData("text") + "</P>";
+    }
+  </script>
+</head>
+<body onload="init()">
+  <img id="img_1" src="../jpg/made_of_stone.jpg" draggable="true">
+  <div id="div_1"></div>
+</body>
+</html>
