@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function Fapi(){
+    var FL = document.getElementById("file_1").files;
+    alert("選択したファイルは" + FL.length + "個です。");
+    }
+  </script>
+</head>
+<body>
+<form name="frm_1">
+<input type="file" id="file_1">
+<br>
+<input type="button" id="button_1" value="選択したら押してください" onClick="Fapi()">
+</form>
+</body>
+</html>
