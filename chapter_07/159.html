@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+</head>
+<body>
+<script>
+  var FRead = new FileReader();
+
+  function Fapi(){
+  var FL = document.getElementById("file_1").files;
+  document.getElementById("STS").innerHTML = "readyStatusの値は " + FRead.readyState + " です。";
+  FRead.readAsText(FL[0], "utf-8");
+  }
+
+  FRead.onprogress = function(evt){
+  document.getElementById("STS").innerHTML = "readyStatusの値は " + FRead.readyState  + "です。";
+  }
+
+  FRead.onload = function(evt){
+  document.getElementById("STS").innerHTML = "readStatusの値は" + FRead.readyState + "です。";
+  }
+</script>
+ファイルを選択してください。
+<form name="frm_1">
+<input type="file" id="file_1">
+<br>
+<input type="button" id="button_1" value="選択したら押してください" onClick="Fapi()">
+</form>
+<div id="STS">ここに結果が表示されます。</div>
+</body>
+</html>

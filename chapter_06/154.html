@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+</head>
+<body>
+<script>
+  var FRead = new FileReader();
+ 
+  function Fapi(){
+  var FL = document.getElementById("file_1").files;
+  FRead.readAsText(FL[0], "utf-8")
+  }
+
+  function Capi(){
+  if (FRead.readyState == 0 || FRead.readyState == 1){
+  FRead.abort();
+  }else{
+  alert("読み込みは終わっています。");
+  }
+  }
+
+  FRead.onabort = function(evt){
+  alert("読み込みは中断しました。");
+  document.getElementById("STS").innerHTML = "読み込みを中断しました。";
+  }
+</script>
+ファイルを選択してください。
+<form name="frm_1">
+<input type="file" id="file_1">
+<br>
+<input type="button" id="button_1" value="選択したら押してください" onClick="Fapi()">
+&nbsp;
+<input type="button" id="button_2" value="読み込み中断" onClick="Capi()">
+</form>
+<div id="STS"></div>
+</body>
+</html>
