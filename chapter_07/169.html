@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function WM(){
+    var CHN = new MessageChannel();
+
+    CHN.port1.start();
+    CHN.port1.onmessage = function(evt){
+    alert(evt.data);
+    CHN.port1.close();
+    CHN.port2.close();
+    }
+
+    CHN.port2.start();
+    CHN.port2.onmessage = function(evt){
+    alert(evt.data);
+    CHN.port2.postMessage("port2からport1へのメッセージ");
+    }
+
+    CHN.port1.postMessage("port1からport2へのメッセージ");
+    }
+  </script>
+</head>
+<body>
+<input type="button" id="BTN" onclick="WM()" value="押してください">
+</body>
+</html>

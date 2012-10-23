@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function DRW(){
+    var SEL = window.getSelection();
+    if(!SEL.isCollapsed){
+    alert("選択されている文字列は「" + SEL.toString() + "」です");
+    }else{
+    alert("文字列が選択されていません");
+    }
+    }
+  </script>
+</head>
+<body>
+<p>この部分のテキストの一部を選択してからボタンを押してください</p>
+<input type="button" id="BTN" onclick="DRW()" value="押してください">
+</body>
+</html>

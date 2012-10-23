@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function BRW(){
+    var SEL = window.getSelection();
+
+    var SND = SEL.anchorNode;
+    alert("選択開始文字列が所属するノードは " + SND.parentNode.tagName + " です。");
+
+    var LND = SEL.focusNode;
+    alert("選択終了文字列が所属するノードは " + LND.parentNode.tagName + " です。");
+    }
+  </script>
+</head>
+<body>
+<p>ここはp要素のテキストです</p>
+<div>ここはdiv要素のテキストです</div>
+<ul>
+<li>ここはli要素のテキストです</li>
+</ul>
+<input type="button" id="BTN" onclick="BRW()" value="押してください">
+</body>
+</html>

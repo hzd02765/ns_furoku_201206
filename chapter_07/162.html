@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function CHK(){
+    var STS = navigator.onLine;
+    if(STS){
+    alert("この端末は現在オンラインです。");
+    }else{
+    alert("この端末は現在オフラインです。");
+    }
+    }
+  </script>
+</head>
+<body>
+<input type="button" id="BTN" onclick="CHK()" value="押してください">
+</body>
+</html>

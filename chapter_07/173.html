@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    function WM(){
+    var WRK_A = new Worker("sample_a.js");
+    var WRK_B = new Worker("sample_b.js");
+
+    WRK_A.onmessage = function(evt){
+    alert(evt.data);
+    }
+
+    WRK_B.onmessage = function(evt){
+    document.getElementById("DIV_1").innerHTML = evt.data;
+    }
+
+    WRK_A.postMessage("呼んでみた");
+    WRK_B.postMessage(200);
+    }
+  </script>
+</head>
+<body>
+<div id="DIV_1"></div>
+<input type="button" id="BTN" onclick="WM()" value="押してください">
+</body>
+</html>

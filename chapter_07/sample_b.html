@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+  <script>
+    window.onmessage = function(evt){
+    var PRT = evt.ports[0];
+    alert(evt.data + PRT);
+    PRT.postMessage("メッセージを返します");
+    }
+  </script>
+</head>
+<body>
+<div id="DIV_1">ここはiframeです</div>
+</body>
+</html>
